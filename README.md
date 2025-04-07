@@ -1,3 +1,5 @@
 1) Used the riscv64-unknown-elf-objdump tool to dump the code.
 2) Find unique instructions like addi,auipc,sub,etc. List of unique commands can be obtained by using - cat dump.txt | awk '{print $3}' | sort | uniq in terminal.
 3) Copied the instructions with their 32 bit codes onto a text file.
+4) The types of the instructions can also be summed up as seen below.
+![image](https://github.com/user-attachments/assets/b2738463-a1ee-430f-b859-f620eefcf247)
