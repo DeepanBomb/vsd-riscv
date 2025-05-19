@@ -1,0 +1,15 @@
+C CODE IMPLEMENTATION
+#define GPIO_BASE 0x10012000
+#define GPIO_IN (*(volatile unsigned int*)(GPIO_BASE + 0x00))
+#define GPIO_OUT (*(volatile unsigned int*)(GPIO_BASE + 0x04))
+
+int main() {
+    while (1) {
+        if ((GPIO_IN & 0x1) == 0) {    // darkness detected
+            GPIO_OUT |= (1 << 1);     // turn ON LED
+        } else {
+            GPIO_OUT &= ~(1 << 1);    // turn OFF LED
+        }
+    }
+    return 0;
+}
